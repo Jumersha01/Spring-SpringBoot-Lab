@@ -1,0 +1,20 @@
+Task 4 – Online Course Enrollment System
+Project Name: OnlineCourseEnrollmentApp
+Properties File: course.properties
+Class: Course.java
+Requirements:
+• Create Maven project and add Spring Core dependency in pom.xml.
+• Use @Component annotation for bean creation.
+• Use @Value annotation to inject values from properties file.
+• Use @PropertySource annotation in configuration class.
+• Create Main class to test the application.
+Fields:
+• courseId
+• courseName
+• trainerName
+• duration
+• courseFee
+• certificateAvailable
+Methods:
+• showCourseDetails()
+• calculateDiscountedFee(double discount)
