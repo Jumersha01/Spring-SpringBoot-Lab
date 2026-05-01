@@ -1,0 +1,57 @@
+Project Name: OTTSubscriptionFactoryApp
+Scenario:
+An OTT platform wants to dynamically create subscription plans like BasicPlan, PremiumPlan, and FamilyPlan using Spring FactoryBean.
+Requirements:
+
+
+Create an interface named SubscriptionService.
+It should contain the following methods:
+activatePlan()
+showPlanDetails()
+
+
+Create implementation classes for the SubscriptionService interface.
+
+
+BasicPlanService class:
+Fields: monthlyPrice, videoQuality
+Methods: activatePlan(), showPlanDetails()
+PremiumPlanService class:
+Fields: yearlyPrice, supportedDevices
+Methods: activatePlan(), showPlanDetails()
+FamilyPlanService class:
+Fields: maxMembers, parentalControl
+Methods: activatePlan(), showPlanDetails()
+
+
+Create a FactoryBean class named SubscriptionFactoryBean.
+It should implement FactoryBean<SubscriptionService>.
+
+
+Responsibilities of SubscriptionFactoryBean:
+It should dynamically return subscription plan objects based on plan type.
+Property:
+planType (String)
+Methods to override:
+getObject(): This method should return the object based on the planType value. For example, if the planType is "basic", it should return a BasicPlanService object; if "premium", return a PremiumPlanService object; if "family", return a FamilyPlanService object.
+getObjectType(): This method should return SubscriptionService.class.
+isSingleton(): This method should return true or false depending on whether a single instance or multiple instances are required.
+
+
+Create an AppConfig class.
+Use @Configuration and @Bean annotations to configure the SubscriptionFactoryBean and inject the planType value.
+
+
+Create a Main class.
+Responsibilities:
+Load the Spring container using the configuration class.
+Fetch the SubscriptionService bean from the container.
+Call activatePlan() and showPlanDetails() methods.
+
+
+Flow:
+The Spring container loads the AppConfig class.
+SubscriptionFactoryBean is created and planType is injected.
+Based on the planType, the corresponding subscription plan object is created.
+The client retrieves the SubscriptionService bean and calls its methods.
+
