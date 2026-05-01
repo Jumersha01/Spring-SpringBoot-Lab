@@ -1,0 +1,47 @@
+Project Name: PaymentGatewayFactoryApp
+
+Scenario:
+An e-commerce company wants to dynamically create payment gateway objects like PhonePe, GooglePay, and Paytm using Spring FactoryBean.
+
+Requirements:
+
+Create an interface named PaymentService.
+It should contain the following methods:
+processPayment()
+showGatewayInfo()
+Create implementation classes for the PaymentService interface.
+
+PhonePeService class:
+Fields: gatewayName, transactionCharge
+Methods: processPayment(), showGatewayInfo()
+
+GooglePayService class:
+Fields: gatewayName, cashbackOffer
+Methods: processPayment(), showGatewayInfo()
+
+PaytmService class:
+Fields: gatewayName, walletLimit
+Methods: processPayment(), showGatewayInfo()
+
+Create a FactoryBean class named PaymentFactoryBean.
+It should implement FactoryBean<PaymentService>.
+
+Responsibilities of PaymentFactoryBean:
+It should return the appropriate object based on the gateway type.
+It should use setter injection to receive the gatewayType value.
+
+Property:
+gatewayType (String)
+
+Methods to override:
+getObject(): This method should return the object based on the gatewayType value. For example, if the gatewayType is "phonepe", it should return a PhonePeService object; if "gpay", return a GooglePayService object; if "paytm", return a PaytmService object.
+
+getObjectType(): This method should return PaymentService.class.
+
+isSingleton(): This method should return true or false depending on whether a single instance is required or multiple instances are needed.
+
+Flow:
+The Spring container loads the PaymentFactoryBean.
+The gatewayType property is injected.
+Based on the gatewayType, the corresponding payment service object is created.
+The client retrieves the PaymentService bean and calls processPayment() and showGatewayInfo() methods.
