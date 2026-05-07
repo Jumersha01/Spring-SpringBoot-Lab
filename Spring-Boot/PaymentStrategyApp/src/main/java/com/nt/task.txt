@@ -1,0 +1,8 @@
+Task  1  –  Payment  Strategy  Design  
+Pattern Scenario: A  shopping  mall  application  wants  to  process  payments  using  different  payment  methods  like  UPI,  Card, and  Cash
+. Use  Strategy  Design  Pattern  in  Spring  Boot  to  solve  ambiguity  between  multiple  implementation  classes. Project  Name: PaymentStrategyApp 
+1.  Create  Interface PaymentStrategy.java Method: void  pay(double  amount);
+2. Create  Classes UpiPayment.java-  Use  @Component-  Output:  Payment  done  using  UPI CardPayment.java-  Use  @Component-  Output:  Payment  done  using  Card CashPayment.java-  Use  @Component-  Output:  Payment  done  using  Cash 
+3.  Create  Service  Class PaymentService.java-  Use  @Component Autowired:-  UpiPayment-  CardPayment-  CashPayment Method: public  void  makePayment(String  type,double  amount)Use  if-else  conditions:-  upi-  card-  cash Call  respective  payment  object  methods.
+4.  Create  Main  Class Inside  main  method: ConfigurableApplicationContext  context  = SpringApplication.run(PaymentStrategyAppApplication.class,args); Get  PaymentService  object  and  call: makePayment("upi",5000); Expected  
+ Output: Payment  done  using  UPI
