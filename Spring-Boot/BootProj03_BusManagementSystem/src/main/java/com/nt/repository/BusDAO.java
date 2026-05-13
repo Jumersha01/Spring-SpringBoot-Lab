@@ -35,7 +35,7 @@ public class BusDAO {
 			if (execute >= 1) {
 				System.out.println("Date entered succesfully");
 			} else {
-				System.out.println("Data aint entered");
+				System.out.println("Damta aint entered");
 			}
 
 		} catch (Exception e) {

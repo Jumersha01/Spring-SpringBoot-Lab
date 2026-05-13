@@ -15,14 +15,14 @@ public class BootProj03BusManagementSystemApplication {
 
 	public static void main(String[] args) {
 		try (ConfigurableApplicationContext ctx = SpringApplication.run(BootProj03BusManagementSystemApplication.class,
-				args)) {
+				args);Scanner sc = new Scanner(System.in)) {
 			BusController controller = ctx.getBean("busController", BusController.class);
 
 			// Taking input from user based on the choice:
 
-			Scanner sc = new Scanner(System.in);
+			
 			while(true) {
-				System.out.println("1 For Entering Bus: \n2 for Retriving Bus: \n3 Exit: ");
+				System.out.println("What do you want: \n1 For Entering Bus: \n2 for Retriving Bus: \n3 Exit: ");
 				int choice = sc.nextInt();
 				switch (choice) {
 				case 1: {
@@ -61,6 +61,7 @@ public class BootProj03BusManagementSystemApplication {
 
 				}
 				case 3:{
+					System.err.print("Thank You Visit Again:");
 					System.exit(0);
 				}
 				default: {
