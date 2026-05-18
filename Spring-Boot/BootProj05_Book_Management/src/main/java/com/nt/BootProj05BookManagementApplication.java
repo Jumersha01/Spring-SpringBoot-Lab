@@ -18,7 +18,7 @@ public class BootProj05BookManagementApplication {
 		  BookController control = ctx.getBean("controll",BookController.class);	
 		  
 		  while(true) {
-				System.out.println("Choose What you want to do:\n1.Insert a new product.\n2.Retrieve all products.\n3.Delete a product by ID.\n4.Update product details.\n5.Exit: ");
+				System.out.println("Choose What you want to do:\n1.Add a new Book.\n2.Retrieve all Books.\n3.Delete a book by ID.\n4.Update Book details.\n5.Exit: ");
 				int choice = sc.nextInt();
 				
 				switch(choice) {
@@ -44,7 +44,8 @@ public class BootProj05BookManagementApplication {
 					
 					List<Book> books = control.retriveAllBooks();
 					for(Book book:books) {
-						System.out.println("Book Title: "+book.getTitle()+"\nBook Id: "+book.getBookId()+"\nBook Authro: "+book.getAuthor()+"\nBook Price: "+book.getPrice());
+						System.out.println();
+						System.out.println("Book Title: "+book.getTitle()+"\nBook Id: "+book.getBookId()+"\nBook Author: "+book.getAuthor()+"\nBook Price: "+book.getPrice());
 						System.out.println("------------------------------------------------");
 					}
 					
