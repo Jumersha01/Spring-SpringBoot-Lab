@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Stock {
 
-	@Scheduled(cron=" */3 * * * * *  ")
+	@Scheduled(fixedRate = 3000)
 	public void monitoring() {
 		System.out.println("Checking Warehouse Inventory Status..\nLaptop : Available in Stock\n"
 				+ "Mobile : Out Of Stock\n"
