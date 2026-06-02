@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Product {
-	
+	//This is the Entity class
 	@Id
 	private Long productId;
 	private String productName;

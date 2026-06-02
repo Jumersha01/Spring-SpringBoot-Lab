@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import com.nt.controller.IProductController;
 import com.nt.entity.Product;
 import com.nt.repository.IProductRespository;
-
+//This is repository class
 @Component
 public class ConsoleApplicationRunner implements CommandLineRunner {
 	private final IProductRespository IProductRespository;

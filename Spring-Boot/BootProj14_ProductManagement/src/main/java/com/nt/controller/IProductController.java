@@ -12,7 +12,7 @@ import com.nt.service.IProductServiceImp;
 public class IProductController {
    @Autowired
   private IProductServiceImp service;
-  
+  //this is the controller class
    public void inserProduct(Product product) {
 	   service.insertProduct(product);
    }
