@@ -20,7 +20,7 @@ import lombok.RequiredArgsConstructor;
 @NoArgsConstructor
 @RequiredArgsConstructor
 @AllArgsConstructor
-
+//Entity
 public class FootballPlayer {
   @Id
   private Integer playerId;

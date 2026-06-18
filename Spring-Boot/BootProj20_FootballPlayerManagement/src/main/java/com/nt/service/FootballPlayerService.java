@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.repository.query.Param;
 
 import com.nt.entity.FootballPlayer;
-
+//Service interface
 public interface FootballPlayerService {
 	
 	List<FootballPlayer> findByClub(String club);

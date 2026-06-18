@@ -10,6 +10,7 @@ import com.nt.entity.FootballPlayer;
 import com.nt.service.FootballPlayerService;
 
 @Component
+//Runner
 public class FootBallPlayerRunner implements CommandLineRunner {
 
 	@Autowired

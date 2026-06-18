@@ -9,6 +9,7 @@ import com.nt.entity.FootballPlayer;
 import com.nt.repository.FootBallPlayerRepository;
 
 @Service
+//Service Runner
 public class FootballPlayerServiceImp implements FootballPlayerService {
 
 	@Autowired

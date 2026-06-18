@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 import com.nt.entity.FootballPlayer;
 
 import jakarta.transaction.Transactional;
-
+//Repository
 public interface FootBallPlayerRepository extends JpaRepository<FootballPlayer, Integer> {
 
 	@Query("SELECT f FROM FootballPlayer f WHERE f.club = :club")
