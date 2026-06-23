@@ -55,7 +55,7 @@ public class HockeyPlayerRunnerTest implements CommandLineRunner {
 		    System.out.println("\n========== TOTAL PLAYERS IN INDIA WARRIORS ==========");
 		    System.out.println("Count : " +
 		            service.countPlayersByTeam("India Warriors"));
-
+//
 		    System.out.println("\n========== PLAYERS SORTED BY GOALS (DESC) ==========");
 		    service.findPlayersOrderByGoalsDesc()
 		           .forEach(System.out::println);
