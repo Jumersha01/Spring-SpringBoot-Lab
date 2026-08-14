@@ -24,7 +24,7 @@ public class Student {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="Student_seq")
 	@SequenceGenerator(name="Student_seq",sequenceName="std_seq",allocationSize=1)
 	private Long id;
-	
+	//Comment
 	@NonNull
 	private String name;
 
