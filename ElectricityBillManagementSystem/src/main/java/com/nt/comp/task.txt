@@ -1,0 +1,19 @@
+Task 3 – Electricity Bill Management System
+Project Name: ElectricityBillApp
+Properties File: electricity.properties
+Class: ElectricityBill.java
+Requirements:
+• Create Maven project and add Spring Core dependency in pom.xml.
+• Use @Component annotation for bean creation.
+• Use @Value annotation to inject values from properties file.
+• Use @PropertySource annotation in configuration class.
+• Create Main class to test the application.
+Fields:
+• consumerId
+• consumerName
+• unitsConsumed
+• ratePerUnit
+• surcharge
+Methods:
+• calculateBill()
+• showConsumerDetails(

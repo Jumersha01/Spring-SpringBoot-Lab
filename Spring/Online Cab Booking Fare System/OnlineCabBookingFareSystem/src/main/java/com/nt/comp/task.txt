@@ -1,0 +1,20 @@
+Task 1 – Online Cab Booking Fare System
+Project Name: CabFareManagementApp
+Properties File: cabinfo.properties
+Class: CabService.java
+Requirements:
+• Create Maven project and add Spring Core dependency in pom.xml.
+• Use @Component annotation for bean creation.
+• Use @Value annotation to inject values from properties file.
+• Use @PropertySource annotation in configuration class.
+• Create Main class to test the application.
+Fields:
+• cabId
+• driverName
+• carModel
+• baseFare
+• perKmCharge
+• available
+Methods:
+• calculateFare(double distance)
+• showCabDetails()

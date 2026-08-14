@@ -1,0 +1,59 @@
+roject Name: VehicleBookingFactoryApp
+Scenario:
+A travel company wants to dynamically book different types of vehicles like Bike, Car, and Bus using Spring FactoryBean.
+Requirements:
+
+
+Create an interface named VehicleService.
+It should contain the following methods:
+bookVehicle()
+vehicleInfo()
+
+
+Create implementation classes for the VehicleService interface.
+
+
+BikeService class:
+Fields: bikeName, rentPerHour
+Methods: bookVehicle(), vehicleInfo()
+CarService class:
+Fields: carName, fuelType
+Methods: bookVehicle(), vehicleInfo()
+BusService class:
+Fields: busType, seatCapacity
+Methods: bookVehicle(), vehicleInfo()
+
+
+Create a FactoryBean class named VehicleFactoryBean.
+It should implement FactoryBean<VehicleService>.
+
+
+Responsibilities of VehicleFactoryBean:
+It should dynamically create vehicle objects.
+It should return the appropriate object based on the vehicleType value.
+Property:
+vehicleType (String)
+Methods to override:
+getObject(): This method should return the object based on the vehicleType value. For example, if the vehicleType is "bike", it should return a BikeService object; if "car", return a CarService object; if "bus", return a BusService object.
+getObjectType(): This method should return VehicleService.class.
+isSingleton(): This method should return true or false depending on whether a single instance is required or multiple instances are needed.
+
+
+Create a Configuration class.
+Use @Configuration and @Bean annotations to define the FactoryBean and configure the vehicleType property.
+
+
+Create a Main class.
+Responsibilities:
+Load the Spring container.
+Fetch the VehicleService bean.
+Call bookVehicle() and vehicleInfo() methods.
+
+
+Flow:
+The Spring container loads the configuration class.
+VehicleFactoryBean is created and vehicleType is injected.
+Based on the vehicleType, the corresponding vehicle service object is created.
+The client retrieves the VehicleService bean and calls booking methods.
+
+

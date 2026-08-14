@@ -1,0 +1,53 @@
+Project Name: NotificationFactoryApp
+
+Scenario:
+A company wants to send notifications using Email, SMS, and WhatsApp services created dynamically using Spring FactoryBean.
+
+Requirements:
+
+Create an interface named NotificationService.
+It should contain the following methods:
+sendNotification()
+notificationDetails()
+Create implementation classes for the NotificationService interface.
+
+EmailService class:
+Fields: senderEmail, smtpServer
+Methods: sendNotification(), notificationDetails()
+
+SMSService class:
+Fields: providerName, smsLimit
+Methods: sendNotification(), notificationDetails()
+
+WhatsAppService class:
+Fields: businessNumber, verifiedStatus
+Methods: sendNotification(), notificationDetails()
+
+Create a FactoryBean class named NotificationFactoryBean.
+It should implement FactoryBean<NotificationService>.
+
+Responsibilities of NotificationFactoryBean:
+It should return the appropriate notification object based on the notificationType value.
+
+Property:
+notificationType (String)
+
+Methods to override:
+getObject(): This method should return the object based on the notificationType value. For example, if the notificationType is "email", it should return an EmailService object; if "sms", return an SMSService object; if "whatsapp", return a WhatsAppService object.
+
+getObjectType(): This method should return NotificationService.class.
+
+isSingleton(): This method should return true or false depending on whether a single instance or multiple instances are required.
+
+Create a Configuration class.
+Use @Configuration and @Bean annotations to define the NotificationFactoryBean and inject the notificationType value.
+Create a Main class.
+Responsibilities:
+Load the ApplicationContext using the configuration class.
+Fetch the NotificationService bean.
+Call sendNotification() and notificationDetails() methods.
+
+Flow:
+The Spring container loads the configuration class.
+NotificationFactoryBean is created and notificationType is injected.
+Based on the notificationType, the corresponding notification service object is created.
